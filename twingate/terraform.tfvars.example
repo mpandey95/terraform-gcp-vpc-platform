@@ -1,0 +1,22 @@
+# Twingate API Token (sensitive — set via .env or GCP Secret Manager, NEVER commit real value)
+twingate_api_token = "your-twingate-api-token-here"
+
+# Twingate Network ID (just the network name, not the full domain)
+twingate_network = "your-twingate-network-name"
+
+# GCP Project ID
+project_id = "your-gcp-project-id"
+
+# GCP Region
+region = "asia-south1"
+
+# Optional: Customize connector and network names
+connector_name      = "gcp-platform-connector"
+remote_network_name = "platform-vpc-network"
+
+# VM Configuration
+connector_vm_name       = "twingate-connector-vm"
+connector_machine_type  = "e2-micro"
+connector_zone_suffix   = "a"
+connector_image         = "ubuntu-os-cloud/ubuntu-2204-lts"
+connector_tags          = ["twingate-connector", "ssh-enabled"]

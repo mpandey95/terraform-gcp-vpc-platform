@@ -1,0 +1,56 @@
+# ─── Terraform State & Plans ───────────────────────────────────────────────
+# Never commit state — it contains plaintext secrets (passwords, tokens, IPs)
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+tfplan
+*.tfplan
+.terraform/
+.terraform.lock.hcl   # Lock file can be committed — uncomment next line to exclude
+# .terraform.lock.hcl
+
+# ─── Terraform Variable Files with Real Values ─────────────────────────────
+# The real tfvars with project_id, API tokens etc. must NEVER be committed.
+# Always commit only the *.example versions as templates.
+terraform.tfvars
+twingate/terraform.tfvars
+
+# ─── Secrets & Credentials ──────────────────────────────────────────────────
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.json           # GCP service account JSON keys
+!package.json    # Exception: keep package.json if ever added
+
+# ─── GCP / gcloud ───────────────────────────────────────────────────────────
+application_default_credentials.json
+gcloud-credentials.json
+service-account*.json
+
+# ─── Python ─────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# ─── macOS ──────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverrideIcon
+._*
+.Spotlight-V100
+.Trashes
+
+# ─── IDE ─────────────────────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
